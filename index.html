@@ -3,298 +3,1298 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nekrutenko Oleksandr — Android Developer</title>
-  <meta name="description" content="Android developer portfolio — Nekrutenko Oleksandr. Mobile apps for Android." />
+  <title>Nekrutenko Oleksandr - Android Developer</title>
+  <meta
+    name="description"
+    content="Portfolio of Nekrutenko Oleksandr, Android developer focused on practical apps, smooth UX, and performance."
+  />
+  <meta name="theme-color" content="#efe6d8" />
+  <meta property="og:title" content="Nekrutenko Oleksandr - Android Developer" />
+  <meta
+    property="og:description"
+    content="Android developer portfolio with published apps and contact information."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dimonbugor.github.io/" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
-      --bg: #0f1117;
-      --surface: #1a1d27;
-      --surface2: #23273a;
-      --accent: #4f8ef7;
-      --accent2: #7c3aed;
-      --text: #e8eaf0;
-      --text2: #9095a8;
-      --border: #2a2f45;
-      --radius: 14px;
+      --bg: #f4ecdd;
+      --bg-soft: #fbf7ef;
+      --paper: #fffdf8;
+      --ink: #1f2a37;
+      --ink-soft: #4c5a6a;
+      --line: #dbcdb8;
+      --brand: #16697a;
+      --brand-2: #f28b30;
+      --shadow: 0 14px 40px rgba(58, 45, 28, 0.09);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1080px;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% -10%, #f7d9a5 0%, transparent 45%),
+        radial-gradient(circle at 85% 0%, #b8e4da 0%, transparent 38%),
+        linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 45%, #efe4d4 100%);
       min-height: 100vh;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
-    /* NAV */
-    nav {
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .site-nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(15,17,23,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      height: 60px;
+      z-index: 40;
+      border-bottom: 1px solid rgba(219, 205, 184, 0.75);
+      backdrop-filter: blur(10px);
+      background: rgba(251, 247, 239, 0.8);
+    }
+
+    .site-nav-inner {
+      height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 16px;
     }
 
-    .nav-logo {
-      font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--accent);
+    .brand {
       text-decoration: none;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      color: var(--brand);
     }
 
     .nav-links {
-      display: flex;
-      gap: 28px;
-      align-items: center;
       list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .nav-links a {
-      color: var(--text2);
       text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color .2s;
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      position: relative;
     }
 
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0;
+      height: 2px;
+      background: var(--brand);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a:focus-visible::after {
+      width: 100%;
+    }
 
     .lang-btn {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 5px 14px;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      font-weight: 600;
+      border: 1px solid #ccbba1;
+      background: #fff7ea;
+      color: var(--ink);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
       cursor: pointer;
-      transition: background .2s;
+      transition: transform 0.15s ease, border-color 0.2s ease;
     }
 
-    .lang-btn:hover { background: var(--border); }
+    .lang-btn:hover {
+      transform: translateY(-1px);
+      border-color: #b8a282;
+    }
 
-    /* HERO */
     .hero {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 90px 24px 70px;
-      text-align: center;
+      padding: 76px 0 30px;
+    }
+
+    .hero-panel {
+      border: 1px solid rgba(219, 205, 184, 0.8);
+      background: linear-gradient(140deg, rgba(255, 253, 248, 0.95), rgba(251, 243, 230, 0.95));
+      border-radius: 26px;
+      box-shadow: var(--shadow);
+      padding: clamp(28px, 4vw, 52px);
+      position: relative;
+      overflow: hidden;
+      animation: rise 0.65s ease-out both;
+    }
+
+    .hero-panel::before,
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      pointer-events: none;
+    }
+
+    .hero-panel::before {
+      width: 240px;
+      height: 240px;
+      top: -110px;
+      right: -80px;
+      background: radial-gradient(circle, rgba(22, 105, 122, 0.2), transparent 70%);
+    }
+
+    .hero-panel::after {
+      width: 190px;
+      height: 190px;
+      left: -80px;
+      bottom: -75px;
+      background: radial-gradient(circle, rgba(242, 139, 48, 0.22), transparent 70%);
     }
 
     .hero-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #4f8ef722, #7c3aed22);
-      border: 1px solid #4f8ef744;
-      color: var(--accent);
-      padding: 5px 16px;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      margin-bottom: 22px;
-      letter-spacing: 0.03em;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(22, 105, 122, 0.28);
+      background: rgba(22, 105, 122, 0.08);
+      color: #0d5261;
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
     }
 
     .hero h1 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-family: "Space Grotesk", sans-serif;
       font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 20px;
-      background: linear-gradient(135deg, #e8eaf0 30%, #4f8ef7);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      letter-spacing: -0.02em;
+      font-size: clamp(2rem, 5.2vw, 4rem);
+      line-height: 1.05;
+      max-width: 10ch;
+      margin-bottom: 16px;
+      color: var(--ink);
     }
 
     .hero p {
-      font-size: 1.1rem;
-      color: var(--text2);
-      max-width: 520px;
-      margin: 0 auto 36px;
+      max-width: 56ch;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 2vw, 1.18rem);
+      margin-bottom: 28px;
     }
 
-    .hero-btns {
+    .hero-actions {
       display: flex;
-      gap: 14px;
-      justify-content: center;
       flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      padding: 12px 19px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
       color: #fff;
-      padding: 12px 28px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: opacity .2s, transform .15s;
+      background: linear-gradient(135deg, var(--brand), #0f5665);
+      box-shadow: 0 8px 22px rgba(22, 105, 122, 0.25);
     }
-
-    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
 
     .btn-secondary {
-      background: var(--surface);
-      color: var(--text);
-      border: 1px solid var(--border);
-      padding: 12px 28px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: background .2s, transform .15s;
+      border: 1px solid #cdb89a;
+      background: #fff8ee;
+      color: #2b3a4a;
     }
 
-    .btn-secondary:hover { background: var(--surface2); transform: translateY(-1px); }
+    .btn:hover {
+      transform: translateY(-2px);
+    }
 
-    /* SECTION */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      max-width: 600px;
+    }
+
+    .stat {
+      border: 1px solid var(--line);
+      background: #fffbf3;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.24rem;
+      line-height: 1.2;
+      color: #243245;
+    }
+
+    .stat span {
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #617286;
+    }
+
     section {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 60px 24px;
+      padding: 72px 0;
     }
 
-    .section-title {
-      font-size: 1.5rem;
-      font-weight: 700;
+    .section-top {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+
+    .eyebrow {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #6f7d8d;
+      letter-spacing: 0.09em;
       margin-bottom: 8px;
     }
 
-    .section-sub {
-      color: var(--text2);
-      font-size: 0.95rem;
-      margin-bottom: 40px;
+    h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.45rem, 3vw, 2.2rem);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
     }
 
-    /* APPS GRID */
+    .section-sub {
+      color: var(--ink-soft);
+      max-width: 64ch;
+      font-size: 0.98rem;
+    }
+
     .apps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: var(--paper);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(59, 43, 23, 0.06);
+    }
+
+    .card.reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fade-up 0.55s ease forwards;
+    }
+
+    .apps-grid .card:nth-child(1) {
+      animation-delay: 120ms;
+    }
+
+    .apps-grid .card:nth-child(2) {
+      animation-delay: 220ms;
+    }
+
+    .app-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .app-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 1.2rem;
+      background: linear-gradient(140deg, #e7f8fa, #fff4e6);
+      border: 1px solid #d9cec0;
+    }
+
+    .app-name {
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .app-desc {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      margin-bottom: 14px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      border: 1px solid #d8c7b1;
+      border-radius: 999px;
+      background: #fff7ea;
+      color: #53677c;
+      padding: 4px 9px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .app-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .app-link {
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 8px 12px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      border: 1px solid #d2bea3;
+      background: #fff9ef;
+      transition: border-color 0.2s ease;
+    }
+
+    .app-link:hover {
+      border-color: #b79d7a;
+    }
+
+    .app-link.primary {
+      border-color: rgba(22, 105, 122, 0.3);
+      background: rgba(22, 105, 122, 0.08);
+      color: #0f5665;
+    }
+
+    .timeline {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--paper);
+      padding: 26px;
+    }
+
+    .timeline-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding-bottom: 10px;
+      border-bottom: 1px dashed #dfd1be;
+    }
+
+    .timeline-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .timeline-year {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 0.9rem;
+      color: #607181;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .timeline-copy {
+      color: var(--ink-soft);
+      font-size: 0.93rem;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 16px;
+    }
+
+    .about-text p {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
+
+    .skill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      align-content: flex-start;
+    }
+
+    .skill {
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid #d4c2ad;
+      background: #fff8ee;
+      font-size: 0.78rem;
+      color: #4e6277;
+      font-weight: 700;
+    }
+
+    .contact-card {
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: clamp(22px, 5vw, 42px);
+      background:
+        linear-gradient(145deg, rgba(22, 105, 122, 0.08), rgba(242, 139, 48, 0.12)),
+        var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.15rem, 3vw, 1.7rem);
+      margin-bottom: 10px;
+    }
+
+    .contact-card p {
+      color: var(--ink-soft);
+      margin: 0 auto 16px;
+      max-width: 56ch;
+      font-size: 0.96rem;
+    }
+
+    .mail {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 11px 16px;
+      border-radius: 12px;
+      border: 1px solid #cdb89a;
+      background: #fff9ef;
+      font-weight: 800;
+      color: #294354;
+    }
+
+    footer {
+      padding: 36px 0 24px;
+      color: #627082;
+      font-size: 0.84rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: #506277;
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    [data-lang="ua"] {
+      display: none;
+    }
+
+    body.lang-ua [data-lang="en"] {
+      display: none;
+    }
+
+    body.lang-ua [data-lang="ua"] {
+      display: initial;
+    }
+
+    body.lang-ua .block[data-lang="ua"] {
+      display: block;
+    }
+
+    .block[data-lang="ua"] {
+      display: none;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fade-up {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .timeline-year {
+        font-size: 0.8rem;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .site-nav-inner {
+        height: auto;
+        padding: 12px 0;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 10px;
+        max-width: 220px;
+      }
+
+      .nav-links a {
+        font-size: 0.84rem;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="container site-nav-inner">
+      <a class="brand" href="#">dimonbugor</a>
+      <ul class="nav-links">
+        <li><a href="#apps"><span data-lang="en">Apps</span><span data-lang="ua">Додатки</span></a></li>
+        <li><a href="#roadmap"><span data-lang="en">Roadmap</span><span data-lang="ua">Роадмап</span></a></li>
+        <li><a href="#about"><span data-lang="en">About</span><span data-lang="ua">Про мене</span></a></li>
+        <li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="ua">Контакт</span></a></li>
+        <li><button class="lang-btn" id="langBtn" onclick="toggleLang()" aria-label="Toggle language">UA</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-panel">
+        <div class="hero-badge">
+          <span data-lang="en">Android Developer</span>
+          <span data-lang="ua">Android Розробник</span>
+        </div>
+
+        <h1>Nekrutenko Oleksandr</h1>
+
+        <p>
+          <span data-lang="en">I build practical Android tools that are fast, clear, and genuinely useful in day-to-day work.</span>
+          <span data-lang="ua">Створюю практичні Android-інструменти, які працюють швидко, зрозуміло і реально допомагають у щоденних задачах.</span>
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#apps">
+            <span data-lang="en">See My Apps</span>
+            <span data-lang="ua">Дивитися додатки</span>
+          </a>
+          <a class="btn btn-secondary" href="#contact">
+            <span data-lang="en">Start a Conversation</span>
+            <span data-lang="ua">Написати мені</span>
+          </a>
+        </div>
+
+        <div class="stats" aria-label="Key portfolio stats">
+          <div class="stat">
+            <strong>1+</strong>
+            <span data-lang="en">Published app</span>
+            <span data-lang="ua">Опублікований додаток</span>
+          </div>
+          <div class="stat">
+            <strong>Android</strong>
+            <span data-lang="en">Main platform</span>
+            <span data-lang="ua">Основна платформа</span>
+          </div>
+          <div class="stat">
+            <strong>UX + Perf</strong>
+            <span data-lang="en">Core focus</span>
+            <span data-lang="ua">Ключовий фокус</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="apps">
+      <div class="container">
+        <div class="section-top">
+          <div>
+            <div class="eyebrow" data-lang="en">Portfolio</div>
+            <div class="eyebrow" data-lang="ua">Портфоліо</div>
+            <h2><span data-lang="en">Apps on Google Play</span><span data-lang="ua">Додатки в Google Play</span></h2>
+          </div>
+          <p class="section-sub">
+            <span data-lang="en">Real products with practical utility. Built with clear architecture and attention to performance details.</span>
+            <span data-lang="ua">Реальні продукти з практичною користю. Побудовані з чистою архітектурою та увагою до продуктивності.</span>
+          </p>
+        </div>
+
+        <div class="apps-grid">
+          <article class="card reveal">
+            <div class="app-head">
+              <div class="app-icon" aria-hidden="true">DB</div>
+              <div class="app-name">DataBase Reader</div>
+            </div>
+            <p class="app-desc">
+              <span data-lang="en">Open, browse, and edit SQLite files directly on-device. Includes table view, filters, and database creation.</span>
+              <span data-lang="ua">Відкривайте, переглядайте і редагуйте SQLite-файли прямо на пристрої. Є таблиці, фільтри та створення бази.</span>
+            </p>
+            <div class="tags">
+              <span class="tag">SQLite</span>
+              <span class="tag">Android</span>
+              <span class="tag">Utilities</span>
+            </div>
+            <div class="app-links">
+              <a
+                class="app-link primary"
+                href="https://play.google.com/store/apps/details?id=com.dimonbugor.databasereader&pcampaignid=web_share"
+                target="_blank"
+                rel="noopener"
+              >
+                Google Play
+              </a>
+              <a class="app-link" href="privacy-policy.html">
+                <span data-lang="en">Privacy Policy</span>
+                <span data-lang="ua">Політика конфіденційності</span>
+              </a>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="app-head">
+              <div class="app-icon" aria-hidden="true">+</div>
+              <div class="app-name"><span data-lang="en">Next Release</span><span data-lang="ua">Наступний реліз</span></div>
+            </div>
+            <p class="app-desc">
+              <span data-lang="en">New Android utility apps are in development. More polished tooling and workflow helpers are coming soon.</span>
+              <span data-lang="ua">Нові Android-утиліти вже в роботі. Найближчим часом додам ще більше корисних інструментів.</span>
+            </p>
+            <div class="tags">
+              <span class="tag">In Progress</span>
+              <span class="tag">Android</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="container">
+        <div class="section-top">
+          <div>
+            <div class="eyebrow" data-lang="en">Direction</div>
+            <div class="eyebrow" data-lang="ua">Напрям</div>
+            <h2><span data-lang="en">Roadmap</span><span data-lang="ua">Роадмап</span></h2>
+          </div>
+          <p class="section-sub">
+            <span data-lang="en">How the portfolio and products evolve over time.</span>
+            <span data-lang="ua">Як розвиваються портфоліо та продукти з часом.</span>
+          </p>
+        </div>
+
+        <div class="timeline reveal">
+          <ol class="timeline-list">
+            <li class="timeline-item">
+              <div class="timeline-year">Now</div>
+              <div class="timeline-copy">
+                <span data-lang="en">Maintaining DataBase Reader and improving user experience based on real-world usage.</span>
+                <span data-lang="ua">Підтримка DataBase Reader та покращення користувацького досвіду на основі реального використання.</span>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-year">Next</div>
+              <div class="timeline-copy">
+                <span data-lang="en">Releasing new utility-focused Android apps with lightweight, productive workflows.</span>
+                <span data-lang="ua">Реліз нових Android-утиліт з легким та продуктивним UX.</span>
+              </div>
+            </li>
+            <li class="timeline-item">
+              <div class="timeline-year">Later</div>
+              <div class="timeline-copy">
+                <span data-lang="en">Expanding app portfolio and collaboration opportunities for custom mobile tooling.</span>
+                <span data-lang="ua">Розширення портфоліо додатків і можливостей співпраці над мобільними інструментами.</span>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-top">
+          <div>
+            <div class="eyebrow" data-lang="en">Profile</div>
+            <div class="eyebrow" data-lang="ua">Профіль</div>
+            <h2><span data-lang="en">About Me</span><span data-lang="ua">Про мене</span></h2>
+          </div>
+        </div>
+
+        <div class="about-grid">
+          <article class="card about-text reveal">
+            <p data-lang="en">I am an Android developer focused on tools that solve practical tasks. My approach combines clear navigation, readable UI, and stable runtime behavior.</p>
+            <p data-lang="en">I publish apps under the <strong>dimonbugor</strong> Google Play developer account and keep improving product quality iteration by iteration.</p>
+
+            <p class="block" data-lang="ua">Я Android-розробник, який фокусується на інструментах для практичних задач. У підході поєдную зрозумілий UX, читабельний UI і стабільну роботу додатка.</p>
+            <p class="block" data-lang="ua">Публікую додатки в Google Play під акаунтом <strong>dimonbugor</strong> і постійно покращую якість продуктів ітерація за ітерацією.</p>
+          </article>
+
+          <article class="card reveal" aria-label="Skills">
+            <div class="skill-grid">
+              <span class="skill">Android SDK</span>
+              <span class="skill">Kotlin</span>
+              <span class="skill">Java</span>
+              <span class="skill">SQLite</span>
+              <span class="skill">Room</span>
+              <span class="skill">Jetpack</span>
+              <span class="skill">MVVM</span>
+              <span class="skill">Material Design</span>
+              <span class="skill">Google Play</span>
+              <span class="skill">AdMob</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <article class="contact-card reveal">
+          <h3>
+            <span data-lang="en">Have an app idea or collaboration request?</span>
+            <span data-lang="ua">Є ідея додатку або запит на співпрацю?</span>
+          </h3>
+          <p>
+            <span data-lang="en">I am open to discussing Android utility apps, feature implementation, and product improvements.</span>
+            <span data-lang="ua">Відкритий до обговорення Android-утиліт, реалізації функціоналу та покращення продуктів.</span>
+          </p>
+          <a class="mail" href="mailto:a.nekrutenko@outlook.com">a.nekrutenko@outlook.com</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>
+        <span>© 2026 Nekrutenko Oleksandr</span>
+        <span> · </span>
+        <a href="privacy-policy.html"><span data-lang="en">Privacy Policy</span><span data-lang="ua">Політика конфіденційності</span></a>
+        <span> · </span>
+        <a href="mailto:a.nekrutenko@outlook.com">a.nekrutenko@outlook.com</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleLang() {
+      const isUa = document.body.classList.toggle("lang-ua");
+      document.getElementById("langBtn").textContent = isUa ? "EN" : "UA";
+      document.documentElement.lang = isUa ? "uk" : "en";
+    }
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nekrutenko Oleksandr | Android Developer</title>
+  <meta name="description" content="Portfolio of Nekrutenko Oleksandr, Android developer building practical apps with clean UX and solid performance." />
+  <meta name="theme-color" content="#f4efe4" />
+  <meta property="og:title" content="Nekrutenko Oleksandr | Android Developer" />
+  <meta property="og:description" content="Android apps with clean UX, practical utility, and strong performance." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #f4efe4;
+      --bg-soft: #faf7ef;
+      --surface: #fffdf7;
+      --surface-strong: #fff8eb;
+      --ink: #1b1a17;
+      --ink-soft: #545046;
+      --line: #d9cfbc;
+      --accent: #0d8a72;
+      --accent-2: #d66d3f;
+      --shadow: 0 10px 30px rgba(48, 37, 20, 0.08);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% -10%, #f9e3c9 0%, rgba(249, 227, 201, 0) 48%),
+        radial-gradient(circle at 90% 0%, #dcefe9 0%, rgba(220, 239, 233, 0) 50%),
+        var(--bg);
+      line-height: 1.65;
+      min-height: 100vh;
+    }
+
+    .top-lines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(to right, rgba(27, 26, 23, 0.025) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(27, 26, 23, 0.025) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: radial-gradient(circle at center, #000 55%, transparent 100%);
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 20px 22px 36px;
+    }
+
+    nav {
+      position: sticky;
+      top: 10px;
+      z-index: 40;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 10px 14px;
+      border: 1px solid rgba(107, 96, 78, 0.24);
+      background: rgba(255, 250, 241, 0.84);
+      border-radius: 16px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 6px 16px rgba(45, 35, 20, 0.06);
+    }
+
+    .nav-logo {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 1.02rem;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-soft);
+      font-weight: 700;
+      font-size: 0.88rem;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--ink);
+      outline: none;
+    }
+
+    .lang-btn {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font-weight: 800;
+      font-size: 0.8rem;
+      border-radius: 999px;
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.2s ease;
+    }
+
+    .lang-btn:hover,
+    .lang-btn:focus-visible {
+      transform: translateY(-1px);
+      border-color: var(--accent);
+      outline: none;
+    }
+
+    .hero {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
       gap: 22px;
+      align-items: stretch;
+    }
+
+    .hero-main,
+    .hero-side {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: clamp(22px, 3vw, 34px);
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #176d5d;
+      background: #e4f4ef;
+      border: 1px solid #b5ddd4;
+      border-radius: 999px;
+      padding: 6px 12px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.08;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.2vw, 1.12rem);
+      color: var(--ink-soft);
+      max-width: 58ch;
+    }
+
+    .hero-btns {
+      margin-top: 28px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      text-decoration: none;
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 11px 19px;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.16s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover,
+    .btn:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .btn-primary {
+      background: linear-gradient(120deg, var(--accent), #0f9c80);
+      color: #fff;
+      box-shadow: 0 8px 22px rgba(13, 138, 114, 0.28);
+    }
+
+    .btn-secondary {
+      color: var(--ink);
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .hero-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background:
+        linear-gradient(150deg, #fff9ec 0%, #fffdf7 55%),
+        var(--surface);
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .stat {
+      border: 1px solid #e5dbc7;
+      background: #fff;
+      border-radius: var(--radius-sm);
+      padding: 12px;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.35rem;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .stat span {
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+
+    .hero-note {
+      margin-top: 16px;
+      border-left: 3px solid var(--accent-2);
+      padding-left: 12px;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
+      max-width: 36ch;
+    }
+
+    section {
+      margin-top: 58px;
+    }
+
+    .section-head {
+      margin-bottom: 18px;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.4rem, 3vw, 1.95rem);
+      line-height: 1.15;
+    }
+
+    .section-head p {
+      color: var(--ink-soft);
+      max-width: 42ch;
+      font-size: 0.94rem;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 16px;
     }
 
     .app-card {
       background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 26px;
-      transition: border-color .2s, transform .2s;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+      padding: 20px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 13px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
     .app-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
+      transform: translateY(-4px);
+      box-shadow: 0 14px 30px rgba(45, 35, 20, 0.11);
+    }
+
+    .app-card.is-muted {
+      background: var(--bg-soft);
+      border-style: dashed;
+      opacity: 0.9;
     }
 
     .app-icon {
-      width: 58px;
-      height: 58px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #1e3a5f, #2d1b69);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 1.45rem;
+      background: linear-gradient(145deg, #f5e8cc, #fff);
+      border: 1px solid #e7d8bb;
     }
 
     .app-name {
-      font-size: 1.05rem;
+      font-family: "Space Grotesk", sans-serif;
       font-weight: 700;
+      font-size: 1.04rem;
     }
 
     .app-desc {
-      color: var(--text2);
-      font-size: 0.88rem;
-      line-height: 1.55;
+      color: var(--ink-soft);
+      font-size: 0.9rem;
       flex: 1;
     }
 
     .app-tags {
       display: flex;
+      gap: 8px;
       flex-wrap: wrap;
-      gap: 7px;
     }
 
     .tag {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--text2);
-      font-size: 0.76rem;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-weight: 500;
+      border: 1px solid #ddd0b8;
+      border-radius: 999px;
+      padding: 4px 11px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #5e5542;
+      background: #fbf6eb;
     }
 
     .app-links {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .app-link,
+    .app-link-sec {
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 8px 14px;
+      font-weight: 800;
+      font-size: 0.81rem;
+      transition: transform 0.15s ease, opacity 0.2s ease;
+    }
+
+    .app-link:hover,
+    .app-link-sec:hover,
+    .app-link:focus-visible,
+    .app-link-sec:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
     }
 
     .app-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
       color: #fff;
-      padding: 8px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 0.83rem;
-      font-weight: 600;
-      transition: opacity .2s;
+      background: linear-gradient(120deg, var(--accent), #0e9f82);
     }
-
-    .app-link:hover { opacity: 0.85; }
 
     .app-link-sec {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text2);
-      padding: 8px 16px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 0.83rem;
-      font-weight: 600;
-      transition: border-color .2s, color .2s;
+      color: var(--ink);
+      border: 1px solid var(--line);
+      background: #fff;
     }
 
-    .app-link-sec:hover { border-color: var(--accent); color: var(--accent); }
-
-    /* ABOUT */
-    .about-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 36px;
+    .about-wrap {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
     }
 
-    @media (max-width: 600px) {
-      .about-card { grid-template-columns: 1fr; }
+    .about-card,
+    .skill-cloud {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+      padding: 22px;
     }
 
-    .about-text { color: var(--text2); font-size: 0.95rem; }
-    .about-text p { margin-bottom: 14px; }
+    .about-card p {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      margin-bottom: 12px;
+    }
 
     .skills-list {
       display: flex;
@@ -304,266 +1304,454 @@
     }
 
     .skill-tag {
-      background: linear-gradient(135deg, #4f8ef715, #7c3aed15);
-      border: 1px solid #4f8ef733;
-      color: var(--accent);
-      font-size: 0.82rem;
-      padding: 5px 13px;
-      border-radius: 20px;
-      font-weight: 500;
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid #c9dfd9;
+      background: #ecf8f5;
+      color: #1d6c5d;
+      font-weight: 700;
+      font-size: 0.79rem;
     }
 
-    /* CONTACT */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+
+    .process-item {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface-strong);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .process-step {
+      display: inline-flex;
+      font-weight: 800;
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #8b5a2d;
+      background: #fbe8d1;
+      border: 1px solid #efd1ac;
+      border-radius: 999px;
+      padding: 3px 9px;
+      margin-bottom: 9px;
+    }
+
+    .process-item h3 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .process-item p {
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+    }
+
     .contact-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 36px;
+      background: linear-gradient(130deg, #ffffff, #fff6e5);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: clamp(22px, 3vw, 34px);
       text-align: center;
     }
 
     .contact-card h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 10px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      margin-bottom: 9px;
     }
 
     .contact-card p {
-      color: var(--text2);
-      font-size: 0.95rem;
-      margin-bottom: 24px;
+      color: var(--ink-soft);
+      max-width: 56ch;
+      margin: 0 auto 18px;
     }
 
     .contact-email {
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 12px 24px;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      transition: border-color .2s;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 11px 20px;
+      font-weight: 800;
+      background: #fff;
+      color: var(--ink);
+      border: 1px solid #d8ccb5;
+      transition: transform 0.15s ease, border-color 0.2s ease;
     }
 
-    .contact-email:hover { border-color: var(--accent); color: var(--accent); }
-
-    /* DIVIDER */
-    .divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 0 24px;
+    .contact-email:hover,
+    .contact-email:focus-visible {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      outline: none;
     }
 
-    /* FOOTER */
     footer {
+      margin-top: 44px;
       text-align: center;
-      padding: 32px 24px;
-      color: var(--text2);
-      font-size: 0.85rem;
+      color: var(--ink-soft);
+      font-size: 0.84rem;
+      padding-bottom: 16px;
     }
 
     footer a {
-      color: var(--text2);
+      color: inherit;
+      font-weight: 700;
       text-decoration: none;
-      transition: color .2s;
     }
 
-    footer a:hover { color: var(--accent); }
+    footer a:hover,
+    footer a:focus-visible {
+      color: var(--ink);
+      outline: none;
+    }
 
-    /* LANG hidden */
-    [data-lang="ua"] { display: none; }
-    body.lang-ua [data-lang="en"] { display: none; }
-    body.lang-ua [data-lang="ua"] { display: unset; }
-    body.lang-ua .about-card [data-lang="ua"],
-    body.lang-ua .contact-card [data-lang="ua"] { display: block; }
-    .about-card [data-lang="ua"],
-    .contact-card [data-lang="ua"] { display: none; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: rise-in 0.8s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.08s; }
+    .delay-2 { animation-delay: 0.16s; }
+    .delay-3 { animation-delay: 0.24s; }
+
+    @keyframes rise-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    [data-lang="ua"] {
+      display: none;
+    }
+
+    body.lang-ua [data-lang="en"] {
+      display: none;
+    }
+
+    body.lang-ua [data-lang="ua"] {
+      display: initial;
+    }
+
+    @media (max-width: 900px) {
+      .hero,
+      .about-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-side {
+        gap: 18px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      .page {
+        padding-inline: 14px;
+      }
+
+      nav {
+        top: 6px;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+
+      .section-head {
+        margin-bottom: 14px;
+      }
+
+      .hero-main,
+      .hero-side,
+      .about-card,
+      .skill-cloud,
+      .contact-card {
+        padding: 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
   </style>
 </head>
 <body>
+  <div class="top-lines" aria-hidden="true"></div>
 
-<nav>
-  <a class="nav-logo" href="#">dimonbugor</a>
-  <ul class="nav-links">
-    <li><a href="#apps"><span data-lang="en">Apps</span><span data-lang="ua">Додатки</span></a></li>
-    <li><a href="#about"><span data-lang="en">About</span><span data-lang="ua">Про мене</span></a></li>
-    <li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="ua">Контакт</span></a></li>
-    <li>
-      <button class="lang-btn" onclick="toggleLang()" id="langBtn">UA</button>
-    </li>
-  </ul>
-</nav>
+  <div class="page">
+    <nav>
+      <a class="nav-logo" href="#">dimonbugor</a>
+      <ul class="nav-links">
+        <li><a href="#apps"><span data-lang="en">Apps</span><span data-lang="ua">Додатки</span></a></li>
+        <li><a href="#about"><span data-lang="en">About</span><span data-lang="ua">Про мене</span></a></li>
+        <li><a href="#process"><span data-lang="en">Process</span><span data-lang="ua">Процес</span></a></li>
+        <li><a href="#contact"><span data-lang="en">Contact</span><span data-lang="ua">Контакт</span></a></li>
+        <li><button class="lang-btn" onclick="toggleLang()" id="langBtn" aria-label="Toggle language">UA</button></li>
+      </ul>
+    </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-badge">
-    <span data-lang="en">Android Developer</span>
-    <span data-lang="ua">Android Розробник</span>
-  </div>
-  <h1>Nekrutenko Oleksandr</h1>
-  <p>
-    <span data-lang="en">Building useful Android apps. Focus on clean UX and performance.</span>
-    <span data-lang="ua">Створюю корисні Android додатки. Фокус на зручному UX та продуктивності.</span>
-  </p>
-  <div class="hero-btns">
-    <a class="btn-primary" href="#apps">
-      <span data-lang="en">View Apps</span>
-      <span data-lang="ua">Переглянути Додатки</span>
-    </a>
-    <a class="btn-secondary" href="#contact">
-      <span data-lang="en">Contact Me</span>
-      <span data-lang="ua">Зв'язатися</span>
-    </a>
-  </div>
-</div>
-
-<hr class="divider" />
-
-<!-- APPS -->
-<section id="apps">
-  <div class="section-title">
-    <span data-lang="en">Apps</span>
-    <span data-lang="ua">Додатки</span>
-  </div>
-  <div class="section-sub">
-    <span data-lang="en">Available on Google Play</span>
-    <span data-lang="ua">Доступні у Google Play</span>
-  </div>
-
-  <div class="apps-grid">
-
-    <!-- DataBaseReader -->
-    <div class="app-card">
-      <div class="app-icon">🗄️</div>
-      <div class="app-name">DataBase Reader</div>
-      <div class="app-desc">
-        <span data-lang="en">Open, browse and edit SQLite database files directly on your Android device. View tables, filter data, create new databases.</span>
-        <span data-lang="ua">Відкривайте, переглядайте та редагуйте SQLite бази даних на Android. Перегляд таблиць, фільтрація даних, створення нових баз.</span>
+    <header class="hero">
+      <div class="hero-main reveal">
+        <div class="hero-kicker">
+          <span data-lang="en">Android Developer</span>
+          <span data-lang="ua">Android Розробник</span>
+        </div>
+        <h1>Nekrutenko Oleksandr</h1>
+        <p>
+          <span data-lang="en">I build practical Android apps with clear UX, clean architecture, and reliable performance for real daily tasks.</span>
+          <span data-lang="ua">Створюю практичні Android-додатки з чітким UX, чистою архітектурою та стабільною продуктивністю для щоденних задач.</span>
+        </p>
+        <div class="hero-btns">
+          <a class="btn btn-primary" href="#apps">
+            <span data-lang="en">View Apps</span>
+            <span data-lang="ua">Переглянути додатки</span>
+          </a>
+          <a class="btn btn-secondary" href="#contact">
+            <span data-lang="en">Start a Conversation</span>
+            <span data-lang="ua">Обговорити співпрацю</span>
+          </a>
+        </div>
       </div>
-      <div class="app-tags">
-        <span class="tag">SQLite</span>
-        <span class="tag">Database</span>
-        <span class="tag">Android</span>
+
+      <aside class="hero-side reveal delay-1">
+        <div class="stat-grid">
+          <div class="stat">
+            <strong>1+</strong>
+            <span data-lang="en">Published app</span>
+            <span data-lang="ua">Опублікований додаток</span>
+          </div>
+          <div class="stat">
+            <strong>100%</strong>
+            <span data-lang="en">Android focus</span>
+            <span data-lang="ua">Фокус на Android</span>
+          </div>
+          <div class="stat">
+            <strong>EN/UA</strong>
+            <span data-lang="en">Bilingual support</span>
+            <span data-lang="ua">Підтримка двох мов</span>
+          </div>
+          <div class="stat">
+            <strong>UX</strong>
+            <span data-lang="en">Practical first</span>
+            <span data-lang="ua">Практичність перш за все</span>
+          </div>
+        </div>
+
+        <p class="hero-note">
+          <span data-lang="en">Open to product ideas, app improvements, and practical utility development for Android.</span>
+          <span data-lang="ua">Відкритий до ідей продуктів, покращень додатків і створення корисних Android-рішень.</span>
+        </p>
+      </aside>
+    </header>
+
+    <section id="apps">
+      <div class="section-head reveal delay-1">
+        <h2>
+          <span data-lang="en">Featured Apps</span>
+          <span data-lang="ua">Основні додатки</span>
+        </h2>
+        <p>
+          <span data-lang="en">Apps currently available and projects in active development.</span>
+          <span data-lang="ua">Додатки, які вже доступні, та проєкти в активній розробці.</span>
+        </p>
       </div>
-      <div class="app-links">
-        <a class="app-link" href="https://play.google.com/store/apps/details?id=com.dimonbugor.databasereader&pcampaignid=web_share" target="_blank" rel="noopener">
-          ▶ Google Play
-        </a>
-        <a class="app-link-sec" href="privacy-policy.html">
+
+      <div class="apps-grid">
+        <article class="app-card reveal delay-1">
+          <div class="app-icon" aria-hidden="true">DB</div>
+          <div class="app-name">DataBase Reader</div>
+          <div class="app-desc">
+            <span data-lang="en">Open, browse, and edit SQLite files directly on Android. Inspect tables, filter rows, and create new databases on-device.</span>
+            <span data-lang="ua">Відкривайте, переглядайте та редагуйте SQLite-файли прямо на Android. Переглядайте таблиці, фільтруйте рядки та створюйте нові бази.</span>
+          </div>
+          <div class="app-tags">
+            <span class="tag">SQLite</span>
+            <span class="tag">Android</span>
+            <span class="tag">Utility</span>
+          </div>
+          <div class="app-links">
+            <a class="app-link" href="https://play.google.com/store/apps/details?id=com.dimonbugor.databasereader&pcampaignid=web_share" target="_blank" rel="noopener">
+              Google Play
+            </a>
+            <a class="app-link-sec" href="privacy-policy.html">
+              <span data-lang="en">Privacy Policy</span>
+              <span data-lang="ua">Політика конфіденційності</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="app-card is-muted reveal delay-2">
+          <div class="app-icon" aria-hidden="true">+</div>
+          <div class="app-name">
+            <span data-lang="en">Coming Soon</span>
+            <span data-lang="ua">Скоро</span>
+          </div>
+          <div class="app-desc">
+            <span data-lang="en">New Android tools are in progress. This section will be updated with upcoming releases.</span>
+            <span data-lang="ua">Нові Android-інструменти вже в роботі. Цей блок буде оновлюватись із майбутніми релізами.</span>
+          </div>
+          <div class="app-tags">
+            <span class="tag">
+              <span data-lang="en">In Progress</span>
+              <span data-lang="ua">У розробці</span>
+            </span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-head reveal delay-1">
+        <h2>
+          <span data-lang="en">About Me</span>
+          <span data-lang="ua">Про мене</span>
+        </h2>
+        <p>
+          <span data-lang="en">Building Android products with attention to architecture, maintainability, and user clarity.</span>
+          <span data-lang="ua">Створюю Android-продукти з увагою до архітектури, підтримуваності та зрозумілого інтерфейсу.</span>
+        </p>
+      </div>
+
+      <div class="about-wrap">
+        <div class="about-card reveal delay-2">
+          <p data-lang="en">I focus on practical mobile tools that solve real problems and stay fast on everyday devices.</p>
+          <p data-lang="en">I design app flows around clear user intent, then implement them with clean and scalable Android architecture.</p>
+          <p data-lang="en">Publishing under the <strong>dimonbugor</strong> Google Play developer account.</p>
+
+          <p data-lang="ua">Фокусуюсь на практичних мобільних інструментах, що вирішують реальні задачі та працюють швидко на щоденних пристроях.</p>
+          <p data-lang="ua">Проєктую сценарії навколо зрозумілого наміру користувача, а потім реалізую їх з чистою та масштабованою Android-архітектурою.</p>
+          <p data-lang="ua">Публікую додатки в Google Play під акаунтом <strong>dimonbugor</strong>.</p>
+        </div>
+
+        <div class="skill-cloud reveal delay-3">
+          <div class="skills-list">
+            <span class="skill-tag">Android SDK</span>
+            <span class="skill-tag">Kotlin</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">Room</span>
+            <span class="skill-tag">MVVM</span>
+            <span class="skill-tag">Jetpack</span>
+            <span class="skill-tag">Material</span>
+            <span class="skill-tag">AdMob</span>
+            <span class="skill-tag">Google Play</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="section-head reveal delay-1">
+        <h2>
+          <span data-lang="en">How I Build</span>
+          <span data-lang="ua">Як я працюю</span>
+        </h2>
+        <p>
+          <span data-lang="en">A compact process from idea to polished Android release.</span>
+          <span data-lang="ua">Короткий процес від ідеї до якісного Android-релізу.</span>
+        </p>
+      </div>
+
+      <div class="process-grid">
+        <article class="process-item reveal delay-1">
+          <span class="process-step">
+            <span data-lang="en">Step 1</span>
+            <span data-lang="ua">Крок 1</span>
+          </span>
+          <h3>
+            <span data-lang="en">Define the task</span>
+            <span data-lang="ua">Формулювання задачі</span>
+          </h3>
+          <p>
+            <span data-lang="en">Clarify user scenario and reduce the feature to practical value.</span>
+            <span data-lang="ua">Уточнюю сценарій користувача та зводжу функцію до практичної цінності.</span>
+          </p>
+        </article>
+
+        <article class="process-item reveal delay-2">
+          <span class="process-step">
+            <span data-lang="en">Step 2</span>
+            <span data-lang="ua">Крок 2</span>
+          </span>
+          <h3>
+            <span data-lang="en">Design and architecture</span>
+            <span data-lang="ua">Дизайн і архітектура</span>
+          </h3>
+          <p>
+            <span data-lang="en">Create clean UI flow and robust code structure for long-term support.</span>
+            <span data-lang="ua">Створюю чистий UI-потік та надійну структуру коду для довгострокової підтримки.</span>
+          </p>
+        </article>
+
+        <article class="process-item reveal delay-3">
+          <span class="process-step">
+            <span data-lang="en">Step 3</span>
+            <span data-lang="ua">Крок 3</span>
+          </span>
+          <h3>
+            <span data-lang="en">Polish and release</span>
+            <span data-lang="ua">Полірування і реліз</span>
+          </h3>
+          <p>
+            <span data-lang="en">Focus on performance, details, and final quality before Google Play publishing.</span>
+            <span data-lang="ua">Фокус на продуктивності, деталях та фінальній якості перед публікацією в Google Play.</span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact-card reveal delay-2">
+        <h3>
+          <span data-lang="en">Have a project idea or question?</span>
+          <span data-lang="ua">Маєте ідею проєкту або запитання?</span>
+        </h3>
+        <p>
+          <span data-lang="en">I am open to collaboration, Android app development inquiries, and practical product discussions.</span>
+          <span data-lang="ua">Відкритий до співпраці, запитів на Android-розробку та обговорення практичних продуктів.</span>
+        </p>
+        <a class="contact-email" href="mailto:a.nekrutenko@outlook.com">a.nekrutenko@outlook.com</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        <span>© 2026 Nekrutenko Oleksandr</span>
+        <span> · </span>
+        <a href="privacy-policy.html">
           <span data-lang="en">Privacy Policy</span>
           <span data-lang="ua">Політика конфіденційності</span>
         </a>
-      </div>
-    </div>
-
-    <!-- Placeholder for future apps -->
-    <div class="app-card" style="border-style: dashed; opacity: 0.45;">
-      <div class="app-icon" style="background: var(--surface2);">➕</div>
-      <div class="app-name">
-        <span data-lang="en">Coming Soon</span>
-        <span data-lang="ua">Скоро</span>
-      </div>
-      <div class="app-desc">
-        <span data-lang="en">More apps are in development. Stay tuned.</span>
-        <span data-lang="ua">Нові додатки в розробці. Слідкуйте за оновленнями.</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<hr class="divider" />
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-title">
-    <span data-lang="en">About</span>
-    <span data-lang="ua">Про мене</span>
-  </div>
-  <div class="section-sub">
-    <span data-lang="en">Developer background</span>
-    <span data-lang="ua">Про розробника</span>
-  </div>
-  <div class="about-card">
-    <div class="about-text">
-      <p data-lang="en">
-        Android developer focused on building practical tools that solve real problems. I develop apps with clean architecture, smooth UX, and attention to performance.
+        <span> · </span>
+        <a href="mailto:a.nekrutenko@outlook.com">a.nekrutenko@outlook.com</a>
       </p>
-      <p data-lang="en">
-        Currently publishing apps on Google Play under the <strong>dimonbugor</strong> developer account.
-      </p>
-      <p data-lang="ua">
-        Android розробник, що фокусується на створенні практичних інструментів які вирішують реальні задачі. Розробляю додатки з чистою архітектурою, зручним UX та увагою до продуктивності.
-      </p>
-      <p data-lang="ua">
-        Публікую додатки у Google Play під акаунтом розробника <strong>dimonbugor</strong>.
-      </p>
-    </div>
-    <div class="skills-list">
-      <span class="skill-tag">Android SDK</span>
-      <span class="skill-tag">Java</span>
-      <span class="skill-tag">Kotlin</span>
-      <span class="skill-tag">SQLite</span>
-      <span class="skill-tag">MVVM</span>
-      <span class="skill-tag">Room</span>
-      <span class="skill-tag">Jetpack</span>
-      <span class="skill-tag">Material Design</span>
-      <span class="skill-tag">AdMob</span>
-      <span class="skill-tag">Google Play</span>
-    </div>
+    </footer>
   </div>
-</section>
 
-<hr class="divider" />
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="section-title">
-    <span data-lang="en">Contact</span>
-    <span data-lang="ua">Контакт</span>
-  </div>
-  <div class="section-sub">
-    <span data-lang="en">Get in touch</span>
-    <span data-lang="ua">Зв'яжіться зі мною</span>
-  </div>
-  <div class="contact-card">
-    <h3>
-      <span data-lang="en">Have a question or project idea?</span>
-      <span data-lang="ua">Є питання або ідея проєкту?</span>
-    </h3>
-    <p>
-      <span data-lang="en">Feel free to reach out via email. I'm open to collaboration and app development inquiries.</span>
-      <span data-lang="ua">Пишіть на пошту. Відкритий до співпраці та розробки додатків.</span>
-    </p>
-    <a class="contact-email" href="mailto:a.nekrutenko@outlook.com">
-      ✉ a.nekrutenko@outlook.com
-    </a>
-  </div>
-</section>
-
-<footer>
-  <p>
-    © 2024 Nekrutenko Oleksandr &nbsp;·&nbsp;
-    <a href="privacy-policy.html">
-      <span data-lang="en">Privacy Policy</span>
-      <span data-lang="ua">Політика конфіденційності</span>
-    </a>
-    &nbsp;·&nbsp;
-    <a href="mailto:a.nekrutenko@outlook.com">a.nekrutenko@outlook.com</a>
-  </p>
-</footer>
-
-<script>
-  function toggleLang() {
-    const isUa = document.body.classList.toggle('lang-ua');
-    document.getElementById('langBtn').textContent = isUa ? 'EN' : 'UA';
-    document.documentElement.lang = isUa ? 'uk' : 'en';
-  }
-</script>
-
+  <script>
+    function toggleLang() {
+      const isUa = document.body.classList.toggle("lang-ua");
+      document.getElementById("langBtn").textContent = isUa ? "EN" : "UA";
+      document.documentElement.lang = isUa ? "uk" : "en";
+    }
+  </script>
 </body>
 </html>
