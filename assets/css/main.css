@@ -350,6 +350,14 @@ h2 {
   color: #33485f;
 }
 
+.app-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
 .app-name {
   font-weight: 800;
   font-size: 1.05rem;
