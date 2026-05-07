@@ -385,6 +385,10 @@ h2 {
   margin-bottom: 14px;
 }
 
+.apps-grid .card .app-desc {
+  flex: 1 1 auto;
+}
+
 .apps-grid .card .app-desc + .tags,
 .apps-grid .card .app-desc + .app-links {
   margin-top: auto;
