@@ -3,298 +3,306 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — DataBase Reader</title>
+  <title>Privacy Policy - dimonbugor Apps</title>
+  <meta
+    name="description"
+    content="Privacy policy for Android apps published by dimonbugor on Google Play."
+  />
+  <meta name="theme-color" content="#efe6d8" />
+  <meta property="og:title" content="Privacy Policy - dimonbugor Apps" />
+  <meta property="og:description" content="How data is handled in apps developed by dimonbugor." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://dimonbugor.github.io/og-image.svg" />
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
-      --bg: #0f1117;
-      --surface: #1a1d27;
-      --surface2: #23273a;
-      --accent: #4f8ef7;
-      --text: #e8eaf0;
-      --text2: #9095a8;
-      --border: #2a2f45;
-      --radius: 14px;
+      --bg: #f4ecdd;
+      --bg-soft: #fbf7ef;
+      --paper: #fffdf8;
+      --ink: #1f2a37;
+      --ink-soft: #4c5a6a;
+      --line: #dbcdb8;
+      --brand: #16697a;
+      --accent: #f28b30;
+      --shadow: 0 14px 40px rgba(58, 45, 28, 0.09);
+      --radius-lg: 20px;
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
       line-height: 1.7;
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 12% -12%, #f8dfb4 0%, transparent 46%),
+        radial-gradient(circle at 86% 0%, #c4e8de 0%, transparent 42%),
+        linear-gradient(180deg, var(--bg-soft), var(--bg));
     }
 
-    nav {
+    a {
+      color: inherit;
+    }
+
+    .container {
+      width: min(100%, 880px);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .site-nav {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(15,17,23,0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      height: 60px;
+      z-index: 40;
+      border-bottom: 1px solid rgba(219, 205, 184, 0.75);
+      backdrop-filter: blur(10px);
+      background: rgba(251, 247, 239, 0.82);
+    }
+
+    .site-nav-inner {
+      min-height: 72px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      padding: 10px 0;
     }
 
-    .nav-logo {
+    .brand {
+      text-decoration: none;
+      font-family: "Space Grotesk", sans-serif;
       font-weight: 700;
-      font-size: 1.1rem;
-      color: var(--accent);
-      text-decoration: none;
+      font-size: 1.05rem;
+      letter-spacing: 0.04em;
+      color: var(--brand);
     }
 
-    .back-link {
-      color: var(--text2);
-      text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-      transition: color .2s;
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
-    .back-link:hover { color: var(--text); }
+    .back-link,
+    .lang-btn {
+      border: 1px solid #ccbba1;
+      border-radius: 999px;
+      padding: 7px 13px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      background: #fff7ea;
+      color: #324457;
+    }
 
     .lang-btn {
-      background: var(--surface2);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 5px 14px;
-      border-radius: 20px;
-      font-size: 0.82rem;
-      font-weight: 600;
       cursor: pointer;
-      transition: background .2s;
     }
 
-    .lang-btn:hover { background: var(--border); }
-
-    .container {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 60px 24px 80px;
+    .hero {
+      padding: 52px 0 20px;
     }
 
-    .page-title {
-      font-size: 2rem;
-      font-weight: 700;
+    .hero h1 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      line-height: 1.1;
       margin-bottom: 8px;
     }
 
-    .page-app {
-      color: var(--accent);
-      font-size: 1rem;
-      font-weight: 600;
+    .hero .sub {
+      color: var(--ink-soft);
       margin-bottom: 6px;
     }
 
-    .page-date {
-      color: var(--text2);
-      font-size: 0.88rem;
-      margin-bottom: 44px;
+    .hero .date {
+      color: #6a7987;
+      font-size: 0.9rem;
+      font-weight: 600;
     }
 
     .policy-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 36px;
-      display: flex;
-      flex-direction: column;
-      gap: 36px;
+      margin: 20px 0 56px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      padding: clamp(18px, 3vw, 34px);
+      display: grid;
+      gap: 26px;
     }
 
-    .policy-section h2 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      color: var(--text);
-    }
-
-    .policy-section p {
-      color: var(--text2);
-      font-size: 0.93rem;
-      margin-bottom: 10px;
-    }
-
-    .policy-section ul {
-      color: var(--text2);
-      font-size: 0.93rem;
-      padding-left: 20px;
-    }
-
-    .policy-section ul li { margin-bottom: 6px; }
-
-    .policy-section a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    .policy-section a:hover { text-decoration: underline; }
-
-    .highlight {
-      background: var(--surface2);
-      border-left: 3px solid var(--accent);
-      padding: 14px 18px;
-      border-radius: 0 8px 8px 0;
-      color: var(--text2);
+    .notice {
+      border: 1px solid rgba(22, 105, 122, 0.3);
+      border-left: 4px solid var(--brand);
+      background: rgba(22, 105, 122, 0.08);
+      border-radius: 12px;
+      padding: 14px;
+      color: #214658;
+      font-weight: 600;
       font-size: 0.92rem;
     }
 
-    /* lang */
+    .section h2 {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .section p,
+    .section li {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .section ul {
+      padding-left: 20px;
+      display: grid;
+      gap: 5px;
+    }
+
+    .apps-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .apps-list a {
+      text-decoration: none;
+      display: inline-flex;
+      width: fit-content;
+      border: 1px solid #d7c7b1;
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      background: #fff9ef;
+      color: #3a5368;
+    }
+
+    footer {
+      padding: 0 0 24px;
+      text-align: center;
+      color: #607181;
+      font-size: 0.84rem;
+    }
+
     [data-lang="ua"] { display: none; }
     body.lang-ua [data-lang="en"] { display: none; }
-    body.lang-ua [data-lang="ua"] { display: unset; }
-    body.lang-ua h2[data-lang="ua"],
-    body.lang-ua p[data-lang="ua"],
-    body.lang-ua ul[data-lang="ua"],
-    body.lang-ua div[data-lang="ua"] { display: block; }
-    h2[data-lang="ua"],
-    p[data-lang="ua"],
-    ul[data-lang="ua"],
-    div[data-lang="ua"] { display: none; }
+    body.lang-ua [data-lang="ua"] { display: initial; }
+    body.lang-ua .block[data-lang="ua"] { display: block; }
+    .block[data-lang="ua"] { display: none; }
+
+    @media (max-width: 700px) {
+      .site-nav-inner {
+        justify-content: center;
+      }
+    }
   </style>
 </head>
 <body>
-
-<nav>
-  <a class="nav-logo" href="index.html">dimonbugor</a>
-  <div style="display:flex;gap:18px;align-items:center;">
-    <a class="back-link" href="index.html">
-      ← <span data-lang="en">Back</span><span data-lang="ua">Назад</span>
-    </a>
-    <button class="lang-btn" onclick="toggleLang()" id="langBtn">UA</button>
-  </div>
-</nav>
-
-<div class="container">
-  <div class="page-app">DataBase Reader</div>
-  <h1 class="page-title">
-    <span data-lang="en">Privacy Policy</span>
-    <span data-lang="ua">Політика конфіденційності</span>
-  </h1>
-  <div class="page-date">
-    <span data-lang="en">Last updated: January 1, 2025</span>
-    <span data-lang="ua">Останнє оновлення: 1 січня 2025 р.</span>
-  </div>
-
-  <div class="policy-card">
-
-    <!-- Intro -->
-    <div class="policy-section">
-      <div class="highlight">
-        <span data-lang="en">DataBase Reader does not collect, store, or transmit any personal data to external servers. All operations are performed locally on your device.</span>
-        <span data-lang="ua">DataBase Reader не збирає, не зберігає та не передає жодних особистих даних на зовнішні сервери. Всі операції виконуються локально на вашому пристрої.</span>
+  <nav class="site-nav">
+    <div class="container site-nav-inner">
+      <a class="brand" href="index.html">dimonbugor</a>
+      <div class="nav-actions">
+        <a class="back-link" href="index.html"><span data-lang="en">Back to site</span><span data-lang="ua">Назад на сайт</span></a>
+        <button class="lang-btn" onclick="toggleLang()" id="langBtn">UA</button>
       </div>
     </div>
+  </nav>
 
-    <!-- What the app does -->
-    <div class="policy-section">
-      <h2 data-lang="en">What the App Does</h2>
-      <h2 data-lang="ua">Що робить додаток</h2>
-      <p data-lang="en">DataBase Reader is a tool that allows you to open, browse, and edit SQLite database files stored on your Android device or accessible via the device's file system.</p>
-      <p data-lang="ua">DataBase Reader — це інструмент, який дозволяє відкривати, переглядати та редагувати SQLite файли баз даних, що зберігаються на вашому Android пристрої.</p>
-    </div>
+  <main class="container">
+    <header class="hero">
+      <h1><span data-lang="en">Privacy Policy</span><span data-lang="ua">Політика конфіденційності</span></h1>
+      <p class="sub"><span data-lang="en">For Android apps published by dimonbugor on Google Play.</span><span data-lang="ua">Для Android-додатків, опублікованих dimonbugor у Google Play.</span></p>
+      <p class="date"><span data-lang="en">Last updated: May 7, 2026</span><span data-lang="ua">Останнє оновлення: 7 травня 2026 р.</span></p>
+    </header>
 
-    <!-- Data we don't collect -->
-    <div class="policy-section">
-      <h2 data-lang="en">Information We Do Not Collect</h2>
-      <h2 data-lang="ua">Інформація, яку ми НЕ збираємо</h2>
-      <ul data-lang="en">
-        <li>Personal identification information (name, email, phone)</li>
-        <li>Location data</li>
-        <li>Device identifiers (beyond what AdMob requires)</li>
-        <li>Contents of database files you open</li>
-        <li>Usage history or analytics beyond ad serving</li>
-      </ul>
-      <ul data-lang="ua">
-        <li>Персональні дані (ім'я, email, телефон)</li>
-        <li>Дані геолокації</li>
-        <li>Ідентифікатори пристрою (крім того, що необхідно AdMob)</li>
-        <li>Вміст файлів баз даних, які ви відкриваєте</li>
-        <li>Історія використання або аналітика (крім показу реклами)</li>
-      </ul>
-    </div>
+    <article class="policy-card">
+      <div class="notice">
+        <span data-lang="en">Core app operations are designed to work locally on your device. We do not sell personal data.</span>
+        <span data-lang="ua">Ключові функції додатків розраховані на локальну роботу на вашому пристрої. Ми не продаємо персональні дані.</span>
+      </div>
 
-    <!-- File access -->
-    <div class="policy-section">
-      <h2 data-lang="en">File Access</h2>
-      <h2 data-lang="ua">Доступ до файлів</h2>
-      <p data-lang="en">The app requests access to files solely to open SQLite database files selected by the user. The contents of these files are processed entirely on-device and are never uploaded or shared.</p>
-      <p data-lang="ua">Додаток запитує доступ до файлів виключно для відкриття SQLite файлів, вибраних користувачем. Вміст цих файлів обробляється лише на пристрої та ніколи не завантажується і не передається.</p>
-    </div>
+      <section class="section">
+        <h2><span data-lang="en">Apps Covered by This Policy</span><span data-lang="ua">Додатки, які охоплює ця політика</span></h2>
+        <p data-lang="en">This policy applies to apps published under the dimonbugor developer account, including:</p>
+        <p class="block" data-lang="ua">Ця політика поширюється на додатки, опубліковані під акаунтом dimonbugor, включно з:</p>
+        <div class="apps-list">
+          <a href="https://play.google.com/store/apps/details?id=com.dimonbugor.databasereader&pcampaignid=web_share" target="_blank" rel="noopener">DataBase Reader</a>
+          <a href="https://play.google.com/store/apps/details?id=onion.crypttalk&pcampaignid=web_share" target="_blank" rel="noopener">CryptTalk</a>
+          <a href="https://play.google.com/store/apps/details?id=ua.wpg.dev.demolemur&pcampaignid=web_share" target="_blank" rel="noopener">DemoLemur</a>
+          <a href="https://play.google.com/store/apps/details?id=app.kosherlist&pcampaignid=web_share" target="_blank" rel="noopener">KosherList</a>
+          <a href="https://play.google.com/store/apps/details?id=com.dimonbugor.rockradioua&pcampaignid=web_share" target="_blank" rel="noopener">Rock Radio UA</a>
+        </div>
+      </section>
 
-    <!-- Advertising -->
-    <div class="policy-section">
-      <h2 data-lang="en">Advertising (Google AdMob)</h2>
-      <h2 data-lang="ua">Реклама (Google AdMob)</h2>
-      <p data-lang="en">The free version of DataBase Reader displays advertisements provided by Google AdMob. Google may collect certain data to serve relevant ads, including:</p>
-      <p data-lang="ua">Безкоштовна версія DataBase Reader показує рекламу від Google AdMob. Google може збирати певні дані для показу релевантної реклами, зокрема:</p>
-      <ul data-lang="en">
-        <li>Advertising ID</li>
-        <li>IP address</li>
-        <li>Device information (model, OS version)</li>
-        <li>Interaction with ads</li>
-      </ul>
-      <ul data-lang="ua">
-        <li>Рекламний ідентифікатор</li>
-        <li>IP-адреса</li>
-        <li>Інформація про пристрій (модель, версія ОС)</li>
-        <li>Взаємодія з рекламою</li>
-      </ul>
-      <p data-lang="en" style="margin-top:12px;">For details on how Google processes this data, see <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
-      <p data-lang="ua" style="margin-top:12px;">Детальніше про обробку даних Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Політика конфіденційності Google</a>.</p>
-    </div>
+      <section class="section">
+        <h2><span data-lang="en">Data We Do Not Collect</span><span data-lang="ua">Дані, які ми не збираємо</span></h2>
+        <ul>
+          <li><span data-lang="en">No sale of personal data</span><span data-lang="ua">Не продаємо персональні дані</span></li>
+          <li><span data-lang="en">No direct collection of payment card data</span><span data-lang="ua">Не збираємо дані платіжних карток напряму</span></li>
+          <li><span data-lang="en">No intentional collection of children's personal data</span><span data-lang="ua">Не здійснюємо навмисний збір персональних даних дітей</span></li>
+        </ul>
+      </section>
 
-    <!-- Purchases -->
-    <div class="policy-section">
-      <h2 data-lang="en">In-App Purchases</h2>
-      <h2 data-lang="ua">Покупки всередині додатку</h2>
-      <p data-lang="en">Premium subscriptions and purchases are processed entirely by Google Play. We do not collect or store any payment information.</p>
-      <p data-lang="ua">Преміум-підписки та покупки обробляються виключно через Google Play. Ми не збираємо та не зберігаємо жодної платіжної інформації.</p>
-    </div>
+      <section class="section">
+        <h2><span data-lang="en">Third-Party Services</span><span data-lang="ua">Сторонні сервіси</span></h2>
+        <p data-lang="en">Some apps may use Google Play Billing and/or Google AdMob. These services may process limited technical data such as advertising identifiers, device model, and ad interaction data according to their own policies.</p>
+        <p class="block" data-lang="ua">Деякі додатки можуть використовувати Google Play Billing та/або Google AdMob. Ці сервіси можуть обробляти обмежені технічні дані (наприклад, рекламні ідентифікатори, модель пристрою та взаємодію з рекламою) відповідно до власних політик.</p>
+        <p>
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>
+        </p>
+      </section>
 
-    <!-- Children -->
-    <div class="policy-section">
-      <h2 data-lang="en">Children's Privacy</h2>
-      <h2 data-lang="ua">Конфіденційність дітей</h2>
-      <p data-lang="en">DataBase Reader is not directed at children under 13. We do not knowingly collect personal information from children.</p>
-      <p data-lang="ua">DataBase Reader не призначений для дітей віком до 13 років. Ми свідомо не збираємо особисту інформацію від дітей.</p>
-    </div>
+      <section class="section">
+        <h2><span data-lang="en">Website Analytics</span><span data-lang="ua">Аналітика сайту</span></h2>
+        <p data-lang="en">This portfolio website uses privacy-friendly Plausible Analytics for aggregated traffic statistics. No cookies are used for this analytics setup.</p>
+        <p class="block" data-lang="ua">Цей сайт-портфоліо використовує privacy-friendly Plausible Analytics для агрегованої статистики відвідувань. У цьому налаштуванні аналітики cookies не використовуються.</p>
+      </section>
 
-    <!-- Changes -->
-    <div class="policy-section">
-      <h2 data-lang="en">Changes to This Policy</h2>
-      <h2 data-lang="ua">Зміни в цій Політиці</h2>
-      <p data-lang="en">We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated date.</p>
-      <p data-lang="ua">Ми можемо час від часу оновлювати цю Політику конфіденційності. Зміни будуть опубліковані на цій сторінці з оновленою датою.</p>
-    </div>
+      <section class="section">
+        <h2><span data-lang="en">Changes to This Policy</span><span data-lang="ua">Зміни до цієї політики</span></h2>
+        <p data-lang="en">We may update this policy from time to time. Updates are posted on this page with a new "Last updated" date.</p>
+        <p class="block" data-lang="ua">Ми можемо періодично оновлювати цю політику. Оновлення публікуються на цій сторінці з новою датою "Останнє оновлення".</p>
+      </section>
 
-    <!-- Contact -->
-    <div class="policy-section">
-      <h2 data-lang="en">Contact Us</h2>
-      <h2 data-lang="ua">Контакти</h2>
-      <p data-lang="en">If you have any questions about this Privacy Policy, please contact:</p>
-      <p data-lang="ua">Якщо у вас є запитання щодо цієї Політики, зверніться до нас:</p>
-      <p><strong>Nekrutenko Oleksandr</strong><br />
-        <a href="mailto:a.nekrutenko@outlook.com">a.nekrutenko@outlook.com</a>
-      </p>
-    </div>
+      <section class="section">
+        <h2><span data-lang="en">Contact</span><span data-lang="ua">Контакти</span></h2>
+        <p>
+          <strong>Nekrutenko Oleksandr</strong><br />
+          <a href="mailto:a.nekrutenko@outlook.com">a.nekrutenko@outlook.com</a>
+        </p>
+      </section>
+    </article>
+  </main>
 
-  </div>
-</div>
+  <footer>
+    <p>© 2026 Nekrutenko Oleksandr</p>
+  </footer>
 
-<script>
-  function toggleLang() {
-    const isUa = document.body.classList.toggle('lang-ua');
-    document.getElementById('langBtn').textContent = isUa ? 'EN' : 'UA';
-    document.documentElement.lang = isUa ? 'uk' : 'en';
-  }
-</script>
-
+  <script>
+    function toggleLang() {
+      const isUa = document.body.classList.toggle("lang-ua");
+      document.getElementById("langBtn").textContent = isUa ? "EN" : "UA";
+      document.documentElement.lang = isUa ? "uk" : "en";
+    }
+  </script>
 </body>
 </html>

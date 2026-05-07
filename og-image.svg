@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-label="Portfolio preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbf7ef" />
+      <stop offset="100%" stop-color="#efe4d4" />
+    </linearGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#16697a" />
+      <stop offset="100%" stop-color="#0f5665" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <circle cx="1080" cy="40" r="220" fill="#d8eee7" opacity="0.8" />
+  <circle cx="120" cy="590" r="200" fill="#f4d8ac" opacity="0.8" />
+
+  <rect x="90" y="120" width="1020" height="390" rx="28" fill="#fffdf8" stroke="#dbcdb8" stroke-width="2" />
+
+  <rect x="140" y="168" width="210" height="44" rx="22" fill="#e5f4f0" stroke="#b3dbd3" />
+  <text x="245" y="196" text-anchor="middle" fill="#0f5665" font-family="Manrope, Arial, sans-serif" font-size="20" font-weight="700">ANDROID DEVELOPER</text>
+
+  <text x="140" y="286" fill="#1f2a37" font-family="Space Grotesk, Arial, sans-serif" font-size="68" font-weight="700">Nekrutenko Oleksandr</text>
+  <text x="140" y="340" fill="#4c5a6a" font-family="Manrope, Arial, sans-serif" font-size="32" font-weight="600">Practical Android apps with clean UX and performance</text>
+
+  <rect x="140" y="388" width="245" height="58" rx="14" fill="url(#chip)" />
+  <text x="263" y="424" text-anchor="middle" fill="#ffffff" font-family="Manrope, Arial, sans-serif" font-size="24" font-weight="700">dimonbugor.github.io</text>
+</svg>
